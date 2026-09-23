@@ -399,3 +399,29 @@ blockquote { margin: 24px 0 0; padding: 17px 20px; border-left: 4px solid #82c89
   .pilot-page .footer-inner { align-items: flex-start; }
   .pilot-page .footer-bottom { gap: 10px; }
 }
+
+/* Well photo gallery */
+.well-gallery-block { margin-top: 54px; padding-top: 43px; border-top: 1px solid var(--line); }
+.well-gallery-heading { max-width: 650px; margin-bottom: 23px; }
+.well-gallery-heading .eyebrow { margin-bottom: 9px; }
+.well-gallery-heading h3 { margin: 0 0 8px; font-size: clamp(1.45rem,3vw,2rem); letter-spacing: -.03em; }
+.well-gallery-heading p { margin: 0; font-size: 14px; }
+.well-gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+.well-gallery figure { overflow: hidden; margin: 0; border: 1px solid var(--line); border-radius: 16px; background: white; box-shadow: 0 9px 25px rgba(16,45,61,.06); }
+.well-gallery figure > a { position: relative; display: grid; height: 320px; place-items: center; overflow: hidden; background: #edf2f3; }
+.well-gallery img { width: 100%; height: 100%; object-fit: contain; transition: transform .35s ease; }
+.well-gallery figure > a:hover img { transform: scale(1.035); }
+.photo-zoom { position: absolute; right: 12px; bottom: 12px; display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; color: var(--navy); background: rgba(255,255,255,.92); font-size: 17px; opacity: 0; transition: opacity .2s ease; }
+.well-gallery figure > a:hover .photo-zoom, .well-gallery figure > a:focus-visible .photo-zoom { opacity: 1; }
+.well-gallery figcaption { display: flex; justify-content: space-between; gap: 12px; padding: 12px 15px; color: var(--navy); font-family: 'Manrope',sans-serif; font-size: 12px; font-weight: 700; }
+.well-gallery figcaption span { color: var(--green); font-size: 11px; letter-spacing: .08em; }
+@media (max-width: 800px) {
+  .well-gallery { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 13px; }
+  .well-gallery figure > a { height: 300px; }
+}
+@media (max-width: 520px) {
+  .well-gallery-block { margin-top: 38px; padding-top: 32px; }
+  .well-gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .well-gallery figure > a { height: 235px; }
+  .well-gallery figcaption { align-items: flex-start; padding: 10px; font-size: 11px; }
+}
